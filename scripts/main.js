@@ -1,6 +1,12 @@
 window.addEventListener('DOMContentLoaded', function() {
   // Execute after page load
 })
+let player = document.querySelector("#player-hand");
+let dealer = document.querySelector("#dealer-hand");
+
+let button = document.querySelector("#deal-button");
+let hitButton = document.querySelector("#hit-button");
+let standButton = document.querySelector("#stand-button");
 
 let deck = [
   {name: '2c', value: 2, imgurl: "images/2_of_clubs.png"},
@@ -57,24 +63,8 @@ let deck = [
   {name: 'ad', value: 11, imgurl: "images/ace_of_spades.png"},
 ]
 
-// var array = [1, 2, 3, 4, 5];
-    
-// // Getting sum of numbers
-// var sum = array.reduce(function(a, b){
-//     return a + b;
-// }, 0);
-
-// console.log(sum);
-
 let playerArr = []    //push player card count to this array
-
 let dealerArr = []    //push dealer card count to this array
-
-let button = document.querySelector("#deal-button");
-
-
-let player = document.querySelector("#player-hand");
-let dealer = document.querySelector("#dealer-hand");
 
 const deal = function(){
   for(let i = 0; i < 2; i++){
@@ -104,14 +94,10 @@ const deal = function(){
   button.style.backgroundColor = 'black';
   button.style.color = 'black';
 }
-button.addEventListener("click", deal)
 
-// console.log(dealerSum)
-
-let hitButton = document.querySelector("#hit-button");
-
+//let i  = to sum of playerArr;  i <= 21 ; i++   //also needs conditional for if playerArr sum > 21 "Bust"
 const hit = function(){
-  for(let i = 0; i <= 1; i++ ){    //let i  = to sum of playerArr;  i <= 21 ; i++   //also needs conditional for if playerArr sum > 21 "Bust"
+  for(let i = 0; i <= 0; i++ ){    
     let img = document.createElement("img");
     img.setAttribute("src", deck[0].imgurl);
     player.append(img);
@@ -120,10 +106,7 @@ const hit = function(){
   }
 }
 
-hitButton.addEventListener("click", hit)
-
-let standButton = document.querySelector("#stand-button");
-
+//need to add remove event listener when clicking stand button;
 //hits as long as i < sum of playerArr or == 21 //also needs conditional for if dealerArr sum > 21 "Dealer Bust You Win"//also if dealerArr > sumPlayerArr & <= 21 "You Lose, Dealer Wins"
 const stand = function(){
   for(let i = 0; i < 1; i++ ){    
@@ -134,10 +117,7 @@ const stand = function(){
     console.log(dealerArr);  
   }
 }
+
+button.addEventListener("click", deal)
+hitButton.addEventListener("click", hit)
 standButton.addEventListener("click", stand)
-
-// const hit = function(){
-//   if(numPlayer == 21);
-
-//   }
-//   console.log('hit was fired');

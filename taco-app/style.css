@@ -1,0 +1,47 @@
+h1 {
+    display:flex;
+    justify-content: center;
+}
+
+.root {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+
+.card {
+  align-self: stretch;
+  text-align: center;
+  order: 0;
+  flex: 0 0 0px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 90px;
+  border-style: dotted;
+  border-width: thin;
+  margin: 10px;
+}
+
+/* h3 {
+    display:flex;
+    justify-content: center;
+}
+
+.tagline {
+    display:flex;
+    justify-content: center;
+} */
+
+.removeButton {
+  order: 0;
+  flex: 0 0 0px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 90px;
+  background: #329229;
+}
+
